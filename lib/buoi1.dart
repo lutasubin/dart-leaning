@@ -107,6 +107,7 @@ print('************************************');
 List thanh=['thanh',14,15,16];
 thanh.add('thanh');
 thanh.indexOf('than',1);
+thanh.insert(1, 50);
 print(thanh);
 thanh.forEach((element) {
   print(element);
