@@ -118,6 +118,95 @@ void printMessage2(
   printMessage2(message: "huy", number: 456);
   printMessage2(message: "huy", number: 456, prefix: "abcd");
 
+//bt them
+  List<int> generateNumbers({required int n}){
+    List<int> numbers=[];
+    for (int i = 1; i <= n; i++) {
+      numbers.add(i);
+    }
+    return numbers;
+
+    
+  }
+
+  List<int>thanh=generateNumbers(n: 8);
+
+  print(thanh);
   
 
+
+
+
+ // //! Error handling
+//! Exception
+  // Ngoại lệ là các sự kiện bất thường xảy ra trong quá trình thực thi chương trình,
+  // chẳng hạn như chia một số cho 0, truy cập vào một chỉ số không hợp lệ trong danh sách, hoặc không tìm thấy tệp tin.
+  // Ngoại lệ thường khác với lỗi (error) vì chúng có thể được dự đoán và xử lý.
+//! Cơ chế xử lý ngoại lệ (Exception Handling)
+  // Dart cung cấp các cấu trúc try, catch, on, finally, và throw để xử lý ngoại lệ.
+//! try và catch
+  // try: Dùng để bao quanh đoạn mã mà bạn dự đoán có thể gây ra ngoại lệ.
+  // catch: Dùng để bắt ngoại lệ nếu xảy ra và xử lý nó.
+
+  // try {
+  //   int result = 10 ~/ 0; // Phép chia gây ra ngoại lệ
+  // } catch (e) {
+  //   print('Caught an exception: $e');
+  // }
+//! on và catch
+  //? on: Dùng để bắt một loại ngoại lệ cụ thể.
+  // Nếu bạn muốn xử lý các loại ngoại lệ khác nhau theo cách khác nhau,
+  // bạn có thể sử dụng nhiều khối on.
+// //? catch: Có thể được sử dụng cùng với on để bắt bất kỳ ngoại lệ nào khác
+  //  hoặc để truy cập thông tin chi tiết về ngoại lệ.
+  // try {
+  //   int result = 10 ~/ 0;
+  // } on IntegerDivisionByZeroException {
+  //   print('Cannot divide by zero');
+  // } catch (e) {
+  //   print('Caught an exception: $e');
+  // }
+//! finally
+  // Dùng để thực hiện các hành động mà bạn muốn thực hiện bất kể ngoại lệ có xảy ra hay không.
+  // Thường được sử dụng để dọn dẹp tài nguyên như đóng tệp tin hoặc giải phóng bộ nhớ.
+  // try {
+  //   int result = 10 ~/ 0;
+  // } catch (e) {
+  //   print('Caught an exception: $e');
+  // } finally {
+  //   print('This will always execute');
+  // }
+// //! throw
+  // Dùng để ném ra một ngoại lệ.
+  // Bạn có thể ném ngoại lệ mặc định của Dart hoặc tự định nghĩa một ngoại lệ của riêng mình.
+  // void checkAge(int age) {
+  //   if (age < 18) {
+  //     throw Exception('You must be at least 18 years old.');
+  //   }
+  // }
+
+  // try {
+  //   checkAge(15);
+  // } catch (e) {
+  //   print('Caught an exception: $e');
+  // }
+//! ngoại lệ tuỳ chỉnh:
+  void checkAge(int age) {
+    if (age < 18) {
+      throw AgeException('Age is too low.');
+    } else if (age > 60) {
+      throw Exception("tuổi quá già");
+    }
+  }
+try {
+    checkAge(61);
+  } on AgeException catch (e) {
+    print('Caught an exception: ${e.cause}');
+  } catch (e) {
+    print('Lỗi khác: $e');
+  }
+class AgeException implements Exception {
+  String cause;
+  AgeException(this.cause);
+}
 }
