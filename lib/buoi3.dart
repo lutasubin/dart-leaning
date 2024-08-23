@@ -18,6 +18,7 @@ void main() {
   // print(maybeNumber);
   // maybeNumber = 5;
   // print(maybeNumber);
+  
   //! Null-aware operators (Toán tử null-aware)
   // ?: Sử dụng để đánh dấu kiểu dữ liệu có thể null.
   // ?.: Toán tử truy cập điều kiện, chỉ thực thi nếu đối tượng không phải là null.
@@ -191,22 +192,23 @@ void printMessage2(
   //   print('Caught an exception: $e');
   // }
 //! ngoại lệ tuỳ chỉnh:
-  void checkAge(int age) {
-    if (age < 18) {
-      throw AgeException('Age is too low.');
-    } else if (age > 60) {
-      throw Exception("tuổi quá già");
-    }
-  }
-try {
-    checkAge(61);
-  } on AgeException catch (e) {
-    print('Caught an exception: ${e.cause}');
-  } catch (e) {
-    print('Lỗi khác: $e');
-  }
-class AgeException implements Exception {
-  String cause;
-  AgeException(this.cause);
-}
+//   void checkAge(int age) {
+//     if (age < 18) {
+//       throw AgeException('Age is too low.');
+//     } else if (age > 60) {
+//       throw Exception("tuổi quá già");
+//     }
+//   }
+// try {
+//     checkAge(61);
+//   } on AgeException catch (e) {
+//     print('Caught an exception: ${e.cause}');
+//   } catch (e) {
+//     print('Lỗi khác: $e');
+//   }
+// class AgeException implements Exception {
+//   String cause;
+//   AgeException(this.cause);
+// }
+// }
 }
