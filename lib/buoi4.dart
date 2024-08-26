@@ -128,16 +128,21 @@ class Car {
     this._model,
     this._year,
   );
+
+  
   //tao getter de cong khai gia tri tao
   //tao setter de thay doi gia tri
 //getter and setter
   String get Brandcar => _brand; //cong khai gia tri
+
   set brands(String newBrand) => _brand = newBrand;
 
   String get Modelcar => _model;
+
   set models(String newModel) => _model = newModel;
 
   String get Yearcar => _brand;
+
   set years(int newYear) => _year = newYear;
 
   void displayCar() {
@@ -160,6 +165,7 @@ class Animal {
     print('Animal is running');
   }
 }
+
 class Cat extends Animal {
   @override
   void eat() {
@@ -175,6 +181,7 @@ class Cat extends Animal {
     print("A cat runs and jumps");
   }
 }
+
 class Dog extends Cat {
   void bark() {
     print('Dog is barking');
@@ -196,27 +203,25 @@ class Employee1 {
     required this.age,
   });
 
-  void work(){
-   
+  void work() {
+    print('---');
   }
-  
 }
+
 class Manager extends Employee1 {
   Manager({required super.name, required super.age});
-  
+
   @override
   void work() {
     print('Managing projects');
-    super.work();
   }
 }
 
 class Developer extends Employee1 {
   Developer({required super.name, required super.age});
-  
+
   @override
   void work() {
     print('writing code');
-    super.work();
   }
 }

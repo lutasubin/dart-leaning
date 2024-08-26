@@ -1,6 +1,7 @@
 import 'package:dart_application_1/buoi4.dart';
 
 void main() {
+  //bt dong goi
   final car1 = Car('toyota', 'fartuner', 2033);
 //   print('xe infor:${car1.brand}');//private nen khong goi ra ddc
 //chi co public goi duoc
@@ -10,8 +11,12 @@ void main() {
 
   car1.brands="thanh";//thay doi dung setter;
   car1.displayCar();
-  // bt employee
+
+
+
+  // bt employee(ke thua)
   final employee =Employee1(name: 'thanh', age: 20);
+  employee.work();
   final manager =Manager(name: 'som', age: 10);
   manager.work();
   final deveper =Developer(name: 'teb', age: 30);
